@@ -91,7 +91,7 @@
             `;
         }
 
-        const base = map.getLayer('Projects_Location');
+        const base = map.getLayer('Projects-9ol00x');
         if (base) {
             const src = base.source;
             const srcLayer = base.sourceLayer;
@@ -129,7 +129,7 @@
                 maxzoom: 24
             });
 
-            map.on('mouseenter', 'Projects_Location', (e) => {
+            map.on('mouseenter', 'Projects-9ol00x', (e) => {
                 map.getCanvas().style.cursor = 'pointer';
                 const feature = e.features[0];
                 const projectNumber = feature.properties["Project Number"];
@@ -142,14 +142,14 @@
                     .addTo(map);
             });
 
-            map.on('mouseleave', 'Projects_Location', () => {
+            map.on('mouseleave', 'Projects-9ol00x', () => {
                 map.getCanvas().style.cursor = '';
                 popup.remove();
                 map.setFilter('Projects_Glow', ['==', 'Project Number', '']);
                 map.setFilter('Projects_Highlight', ['==', 'Project Number', '']);
             });
 
-            map.on('click', 'Projects_Location', (e) => {
+            map.on('click', 'Projects-9ol00x', (e) => {
                 const feature = e.features[0];
                 const projectNumber = feature.properties["Project Number"];
 
@@ -175,4 +175,5 @@
 </script>
 
 </body>
+
 </html>
